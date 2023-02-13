@@ -109,6 +109,9 @@ quant_weight_lenet = QuantWeightLeNet()
 #model = ConvNeuralNet(num_classes)
 model = quant_weight_lenet
 
+if torch.cuda.is_available():
+    model.cuda()
+
 # Set Loss function with criterion
 criterion = nn.CrossEntropyLoss()
 
